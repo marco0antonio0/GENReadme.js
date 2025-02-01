@@ -19,6 +19,7 @@ export default function promptFormat({titulo,caracteristicas,tecnologias,emoji,e
        - Dê exemplos práticos de como eles funcionam.  
     
     3️⃣ **Tecnologias utilizadas**  
+       - Utilize emojis ${emoji ? "Sim" : "Não"} para estilizar cada item
        - Liste todas as tecnologias, frameworks, bibliotecas e linguagens utilizadas.  
        - Para cada uma, explique brevemente o motivo da escolha e sua função no projeto.  
     
@@ -50,6 +51,7 @@ export default function promptFormat({titulo,caracteristicas,tecnologias,emoji,e
     
     🔹 **IMPORTANTE**:  
     - O README deve estar em **formato Markdown**.  
+    - O README deve conter **todos os itens acima obrigatoriamente**.  
     - Ele **deve ser bem estruturado**, com títulos, subtítulos e listas bem organizadas.  
     ${emojiTopic?'- Sempre que possível, utilize **emojis** para destacar seções (📌, ⚡, ✅, 🚀, etc.).  ':''}
     - Para fazer o README do projeto utilize emojis:** ${emoji ? "Sim" : "Não"}
