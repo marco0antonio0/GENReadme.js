@@ -159,7 +159,9 @@ export default function Home() {
       className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
     >
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start m-auto max-w-[500px]">
-        <img className="w-[300px] h-auto" src="/logo.png" alt="Logo" />
+      <img className="w-[300px] h-auto dark:invert(0)" src="/logo.svg" alt="Logo" style={{
+        filter:'invert(1)'
+      }}/>
 
         <span className="text-justify">
           Esta aplicação web permite que você crie READMEs bonitos e bem estruturados com a ajuda da IA, preenchendo apenas algumas informações sobre o seu projeto. Com poucos cliques, você terá uma documentação profissional, pronta para ser usada no seu repositório. Ganhe tempo e melhore a apresentação dos seus projetos!
