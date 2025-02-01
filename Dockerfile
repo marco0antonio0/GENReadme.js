@@ -1,14 +1,26 @@
-# Segunda fase: use uma imagem nginx leve para servir a aplicação
-FROM nginx:alpine
+# Usa Node.js otimizado para produção
+FROM node:18-alpine
 
-# Copie a configuração do Nginx
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+# Define o diretório de trabalho no container
+WORKDIR /app
 
-# Copie os arquivos de build do Flutter para o diretório padrão do Nginx
-COPY --from=build /build/web /usr/share/nginx/html
+# Copia os arquivos essenciais
+COPY package.json package-lock.json ./
 
-# Exponha a porta onde o Nginx servirá a aplicação
-EXPOSE 80
+# Instala as dependências (somente para produção)
+RUN npm install --production
 
-# Inicie o Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Copia todo o código para o container
+COPY . .
+
+# Copia o .env.local para dentro do container
+COPY .env .env
+
+# Build da aplicação
+RUN npm run build
+
+# Define a porta
+EXPOSE 3000
+
+# Inicia o servidor Next.js em modo produção
+CMD ["npm", "run", "start"]
