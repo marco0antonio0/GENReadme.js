@@ -1,11 +1,11 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import { useState, useEffect } from "react";
-import fetchGeminiResponse from "@/utils/fetch";
 import { downloadReadme } from "@/utils/downloadReadme";
 import { parseCookies, setCookie } from "nookies";
 import promptFormat from "@/utils/promptFormat";
 import Head from "next/head";
+import fetchGeminiResponse from "@/utils/fetch";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
