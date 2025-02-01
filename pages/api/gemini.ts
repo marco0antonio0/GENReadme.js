@@ -1,8 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import applyRateLimit from "@/utils/rateLimit";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método não permitido" });
+  }
+
+  try {
+    // Aplica a limitação de requisições
+    await applyRateLimit(req, res);
+  } catch (error) {
+    return res.status(429).json({ error: "Muitas requisições, tente novamente mais tarde." });
   }
 
   // A chave API agora é acessível apenas no backend
