@@ -177,7 +177,7 @@ export default function Home() {
           Esta aplicação web permite que você crie READMEs bonitos e bem estruturados com a ajuda da IA, preenchendo apenas algumas informações sobre o seu projeto. Com poucos cliques, você terá uma documentação profissional, pronta para ser usada no seu repositório. Ganhe tempo e melhore a apresentação dos seus projetos!
         </span>
 
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)] w-full space-y-2">
+        <ol className="list-inside list-decimal text-sm text-left font-[family-name:var(--font-geist-mono)] w-full space-y-2">
           <li className="mb-2">Qual título do seu projeto?</li>
           <textarea
             className={`w-full p-2 border rounded-md resize-none dark:bg-black/[.08] focus:outline-none focus:ring-2 ${
