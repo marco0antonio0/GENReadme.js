@@ -5,16 +5,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  // Permitir apenas requisições do frontend da aplicação
-  const allowedOrigin = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const origin = req.headers.origin || "";
-
-  if (!origin.includes(allowedOrigin)) {
-    return res.status(403).json({ error: "Acesso negado: Origem não permitida" });
-  }
-
   // A chave API agora é acessível apenas no backend
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
   if (!apiKey) {
     return res.status(500).json({ error: "API Key não configurada no servidor" });
